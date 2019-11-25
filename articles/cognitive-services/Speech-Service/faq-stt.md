@@ -64,7 +64,7 @@ If you have adapted and deployed a model with baseline V1.0, that deployment wil
 
 **A**: You can scale up your model in increments of 20 concurrent requests.
 
-Contact [Speech support](mailto:speechsupport@microsoft.com?subject=Request%20for%20higher%20concurrency%20for%20Speech-to-text) if you require a higher scale.
+Create [Azure support ticket](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) if you require a higher scale.
 
 To increase concurrency for a ***custom model***, we need the following information:
 
