@@ -47,8 +47,12 @@ This is a high-level overview of how Conversation Transcription works.
 
 ## Expected inputs
 
-- **Multi-channel audio stream** – For specification and design details, see [Microsoft Speech Device SDK Microphone](https://aka.ms/cts/microphone). To learn more or purchase a development kit, see [Get Microsoft Speech Device SDK](https://aka.ms/cts/getsdk).
+- **Multi-channel audio stream** – Audio stream from arbitrary two-dimentional microphone array device is prefered for better diarization quality. The geometry of the microphons need to be passed to the backend service, you could find sample codes in [Transcribe conversations in real time](how-to-use-conversation-transcription-service.md). To find out microphone array example specification and design details, see [Microsoft Speech Device SDK Microphone](https://aka.ms/cts/microphone). To learn more or purchase a development kit, see [Get Microsoft Speech Device SDK](https://aka.ms/cts/getsdk). If you have any inquiry about how to configure the device geometry, contact [Conversation Transcription Feature Crew](mailto:CTSFeatureCrew@microsoft.com).
+
 - **User voice samples** – Conversation Transcription needs user profiles in advance of the conversation. You will need to collect audio recordings from each user, then send the recordings to the [Signature Generation Service](https://aka.ms/cts/signaturegenservice) to validate the audio and generate user profiles.
+> [!NOTE]
+> User voice samples is optional. Without this input, the transcription result could still be seperated to different speakers but showing as "Speaker1", "Speaker2" ... instead of recognizing as pre-enrolled specific speaker names.
+
 
 ## Real-time vs. asynchronous
 
@@ -68,7 +72,7 @@ Audio data is processed live to return speaker identifier + transcript, and, in 
 
 ## Language support
 
-Currently, Conversation Transcription supports "en-US" and "zh-CN" in the following regions: *centralus* and *eastasia*. If you require additional locale support, contact the [Conversation Transcription Feature Crew](mailto:CTSFeatureCrew@microsoft.com).
+Currently, Conversation Transcription supports the same languges as [Speech-to-text languages](language-support.md#speech-to-text) in the following regions: *centralus*, *eastus*, *eastasia* and *westeurope*.
 
 ## Next steps
 
